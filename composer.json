@@ -48,7 +48,12 @@
         "vimeo/psalm": "4.7.1"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true,
+            "symfony/thanks": true
+        }
     },
     "extra": {
         "branch-alias": {

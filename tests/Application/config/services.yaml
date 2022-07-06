@@ -5,3 +5,5 @@ parameters:
 
 debug:
     dump_destination: "tcp://%env(VAR_DUMPER_SERVER)%"
+sylius_api:
+    enabled: true

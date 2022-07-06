@@ -24,3 +24,4 @@ sylius_taxonomy:
 
 sylius_api:
     enabled: true
+    product_image_prefix: 'media/image'
