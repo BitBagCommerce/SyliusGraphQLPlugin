@@ -119,7 +119,7 @@ We are hiring developers from all over the world. Join us and start your new, ex
                     <attribute name="groups">shop:customer:create</attribute>
                 </attribute>
                 <attribute name="messenger">input</attribute>
-                <attribute name="input">Sylius\Bundle\ApiBundle\Command\RegisterShopUser</attribute>
+                <attribute name="input">Sylius\Bundle\ApiBundle\Command\Account\RegisterShopUser</attribute>
                 <attribute name="output">false</attribute>
             </collectionOperation>
         </collectionOperations>
