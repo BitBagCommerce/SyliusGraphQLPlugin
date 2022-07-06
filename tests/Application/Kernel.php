@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\BitBag\SyliusGraphqlPlugin\Application;
 
+use BitBag\SyliusGraphqlPlugin\CompilerPass\PaymentMethodChangerPolyfillPass;
 use PSS\SymfonyMockerContainer\DependencyInjection\MockerContainer;
 use Sylius\Bundle\CoreBundle\Application\Kernel as SyliusKernel;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
@@ -67,7 +68,7 @@ final class Kernel extends BaseKernel
 
     protected function getContainerBaseClass(): string
     {
-        if ($this->isTestEnvironment()) {
+        if ($this->isTestEnvironment() && class_exists(MockerContainer::class)) {
             return MockerContainer::class;
         }
 
@@ -121,5 +122,10 @@ final class Kernel extends BaseKernel
         if (is_dir($symfonyConfigDir)) {
             yield $symfonyConfigDir;
         }
+    }
+
+    protected function build(ContainerBuilder $container): void
+    {
+        $container->addCompilerPass(new PaymentMethodChangerPolyfillPass());
     }
 }

@@ -15,7 +15,7 @@ We are hiring developers from all over the world. Join us and start your new, ex
         <graphql>
             <operation name="shop_register">
                 <attribute name="messenger">input</attribute>
-                <attribute name="input">Sylius\Bundle\ApiBundle\Command\RegisterShopUser</attribute>
+                <attribute name="input">\Sylius\Bundle\ApiBundle\Command\RegisterShopUser</attribute>
                 <attribute name="args">
                     <attribute name="firstName">
                         <attribute name="type">String!</attribute>
